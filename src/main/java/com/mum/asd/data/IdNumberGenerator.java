@@ -14,7 +14,7 @@ public final class IdNumberGenerator {
 		return ++userId;
 	}
 
-	public static Long generateAccountId() {
+	public static Long generateAccountNumber() {
 		return ++accountId;
 	}
 

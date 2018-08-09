@@ -4,19 +4,15 @@ import java.util.List;
 
 public class Account {
 
-	private long id;
 	private long accountNumber;
 	private User user;
 	private double userBalance;
 	private List<Pill> paidPills;
 	private List<Transfer> userTransfers;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
+	public Account(long accountNumber, double userBalance) {
+		this.accountNumber = accountNumber;
+		this.userBalance = userBalance;
 	}
 
 	public long getAccountNumber() {
@@ -57,6 +53,28 @@ public class Account {
 
 	public void setUserTransfers(List<Transfer> userTransfers) {
 		this.userTransfers = userTransfers;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (accountNumber ^ (accountNumber >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Account other = (Account) obj;
+		if (accountNumber != other.accountNumber)
+			return false;
+		return true;
 	}
 
 }
