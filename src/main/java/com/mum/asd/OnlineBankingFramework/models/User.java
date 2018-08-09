@@ -16,6 +16,7 @@ public class User {
 		this.name = name;
 		this.password = password;
 		this.account = account;
+		this.account.setUser(this);
 	}
 
 	public long getId() {
