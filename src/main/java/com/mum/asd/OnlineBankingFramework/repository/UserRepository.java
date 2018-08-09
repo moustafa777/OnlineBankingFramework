@@ -1,5 +1,7 @@
 package com.mum.asd.OnlineBankingFramework.repository;
 
-public interface UserRepository {
+import com.mum.asd.OnlineBankingFramework.models.User;
+
+public interface UserRepository extends BaseRepository<User> {
 
 }
