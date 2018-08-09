@@ -24,5 +24,15 @@ public class UserAcountFacade {
 	public Account findAcount(long accountNumber) {
 		return accountDAO.find(accountNumber);
 	}
+	
+	public void addUser(User user) {
+		 userDAO.add(user);
+	}
+	
+	public Account viewAccountDetails(User user) {
+		
+		return accountDAO.find(user.getAccount().getAccountNumber());
+	}
+	
 
 }

@@ -14,9 +14,10 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void add(User t) {
-		// TODO Auto-generated method stub
-
+	public void add(User user) {
+		
+		DataBase.getInstance().getUsers().add(user);
+	
 	}
 
 	@Override

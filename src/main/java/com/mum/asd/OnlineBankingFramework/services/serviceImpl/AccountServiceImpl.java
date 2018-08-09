@@ -1,11 +1,14 @@
-package com.mum.asd.OnlineBankingFramework.serviceImpl;
+package com.mum.asd.OnlineBankingFramework.services.serviceImpl;
 
+import com.mum.asd.OnlineBankingFramework.dao.UserAcountFacade;
+import com.mum.asd.OnlineBankingFramework.models.Account;
 import com.mum.asd.OnlineBankingFramework.models.Pill;
 import com.mum.asd.OnlineBankingFramework.models.Transfer;
 import com.mum.asd.OnlineBankingFramework.models.User;
-import com.mum.asd.OnlineBankingFramework.service.IAccountService;
+import com.mum.asd.OnlineBankingFramework.services.IAccountService;
 
 public class AccountServiceImpl implements IAccountService {
+	UserAcountFacade userAcountFacade;
 
 	@Override
 	public Transfer transferFund(Transfer transfer) {
@@ -19,4 +22,11 @@ public class AccountServiceImpl implements IAccountService {
 		return 0;
 	}
 
+	@Override
+	public Account viewAccountDetails(User user) {
+		userAcountFacade = new UserAcountFacade();
+
+		return userAcountFacade.viewAccountDetails(user);
+
+	}
 }

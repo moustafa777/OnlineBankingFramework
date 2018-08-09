@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.mum.asd.OnlineBankingFramework.dao.AccountDAO;
 import com.mum.asd.OnlineBankingFramework.models.Account;
+import com.mum.asd.OnlineBankingFramework.models.User;
+import com.mum.asd.data.DataBase;
 
 public class AccountDAOImpl implements AccountDAO {
 
@@ -29,6 +31,13 @@ public class AccountDAOImpl implements AccountDAO {
 	public boolean remove(long id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Override
+	public Account find(User user) {
+		return	DataBase.getInstance().getAcounts().stream().filter(acc -> acc.getUser().equals(user)).findFirst().orElse(null);
+		
+			
 	}
 
 }

@@ -12,10 +12,12 @@ public final class DataBase {
 	private static DataBase dataBase = new DataBase();
 
 	private final List<User> users;
+	private final List<Account> acounts;
 
 	private DataBase() {
 
 		users = new ArrayList<>();
+		acounts = new ArrayList<>();
 		initializeUsersData();
 	}
 
@@ -25,8 +27,6 @@ public final class DataBase {
 	private void initializeUsersData() {
 
 		Random random = new Random();
-
-		List<Account> acounts = new ArrayList<>();
 
 		// Generate accounts
 		for (int i = 0; i < 10; i++) {
@@ -39,6 +39,12 @@ public final class DataBase {
 					acounts.get(i - 1)));
 		}
 
+	}
+	
+	
+
+	public List<Account> getAcounts() {
+		return acounts;
 	}
 
 	public List<User> getUsers() {
