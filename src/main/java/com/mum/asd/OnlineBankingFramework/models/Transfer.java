@@ -30,4 +30,26 @@ public class Transfer {
 		this.destinationAccount = destinationAccount;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (transferNumber ^ (transferNumber >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transfer other = (Transfer) obj;
+		if (transferNumber != other.transferNumber)
+			return false;
+		return true;
+	}
+
 }

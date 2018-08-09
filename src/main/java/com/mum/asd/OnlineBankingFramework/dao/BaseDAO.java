@@ -1,8 +1,8 @@
-package com.mum.asd.OnlineBankingFramework.repository;
+package com.mum.asd.OnlineBankingFramework.dao;
 
 import java.util.List;
 
-public interface BaseRepository<T> {
+public interface BaseDAO<T> {
 
 	T find(long id);
 
