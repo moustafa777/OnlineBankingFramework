@@ -41,6 +41,10 @@ public final class DataBase {
 
 	}
 
+	public List<User> getUsers() {
+		return users;
+	}
+
 	public static DataBase getInstance() {
 		return dataBase;
 	}
