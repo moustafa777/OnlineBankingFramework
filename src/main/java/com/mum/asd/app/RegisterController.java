@@ -15,12 +15,12 @@ public class RegisterController {
 
 	@GetMapping("/register")
 	public String register(Model model) {
-		//model.addAttribute("user", new User());
+		model.addAttribute("user", new User());
 		return "register";
 	}
 
 	@PostMapping("/register")
-	public String register(String test,Model model) {
+	public String register(@ModelAttribute User user,Model model) {
 		
 		System.out.println("fdjs");
 		

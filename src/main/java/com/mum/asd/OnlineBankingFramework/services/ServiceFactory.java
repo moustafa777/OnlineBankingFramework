@@ -5,12 +5,12 @@ import com.mum.asd.OnlineBankingFramework.services.serviceImpl.UserServiceImpl;;
 
 public class ServiceFactory {
 
-	public IUserService getUserService() {
+	public static IUserService getUserService() {
 
 		return new UserServiceImpl();
 	}
 
-	public IAccountService getAccountService() {
+	public static  IAccountService getAccountService() {
 
 		return new AccountServiceImpl();
 	}
