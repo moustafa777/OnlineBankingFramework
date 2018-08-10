@@ -31,7 +31,7 @@ public class UserAcountFacade {
 	
 	public Account viewAccountDetails(User user) {
 		
-		return accountDAO.find(user.getAccount().getAccountNumber());
+		return accountDAO.find(user);
 	}
 	
 

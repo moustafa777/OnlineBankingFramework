@@ -22,13 +22,19 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return DataBase.getInstance().getUsers();
 	}
 
 	@Override
 	public boolean remove(long id) {
-		// TODO Auto-generated method stub
+		
+		for(User user: DataBase.getInstance().getUsers()) {
+			
+			if(user.getId() == id) {
+				DataBase.getInstance().getUsers().remove(user);
+				return true;
+			}
+		}
 		return false;
 	}
 
