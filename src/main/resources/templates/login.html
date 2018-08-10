@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 <meta charset="utf-8">
@@ -30,11 +29,12 @@
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Login</div>
 			<div class="card-body">
-				<form action="/login" method="post">
+				<form th:action="@{/login}" th:object="${user}" method="post">
+				
 					<div class="form-group">
 						<div class="form-label-group">
 							<input type="text" id="name" class="form-control"
-								placeholder="Username" required="required" name="name"
+								placeholder="Username" required="required" name="userName"
 								autofocus="autofocus"> <label for="inputEmail">Name</label>
 						</div>
 					</div>
