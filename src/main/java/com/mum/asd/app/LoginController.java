@@ -23,14 +23,14 @@ public class LoginController {
 	@PostMapping("/login")
 	public String login(@ModelAttribute User user, Model model) {
 
-	
-		 UserProxyAuthentication userProxy = new UserProxyAuthentication();
-		 
-		 if(userProxy.IsAuthenticated(user.getUserName(), user.getPassword()) != null) {
-			 return "redirect:/index.html";
-		 }
+		UserProxyAuthentication userProxy = new UserProxyAuthentication();
 
-		 return null;
-			
+		if (userProxy.IsAuthenticated(user.getUserName(), user.getPassword()) != null) {
+			return "redirect:/index.html";
+		} else {
+			model.addAttribute("error", "User Name or Password is wrong");
+			return "login";
+		}
+
 	}
 }

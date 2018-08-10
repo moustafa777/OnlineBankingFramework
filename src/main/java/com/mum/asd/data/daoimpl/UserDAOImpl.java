@@ -15,9 +15,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public void add(User user) {
-		
 		DataBase.getInstance().getUsers().add(user);
-	
 	}
 
 	@Override
@@ -27,21 +25,22 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean remove(long id) {
-		
-		for(User user: DataBase.getInstance().getUsers()) {
-			
-			if(user.getId() == id) {
-				DataBase.getInstance().getUsers().remove(user);
-				return true;
-			}
+
+		User user = DataBase.getInstance().getUsers().stream().filter(u -> u.getId() == id).findFirst().orElse(null);
+
+		if (user != null) {
+			DataBase.getInstance().getUsers().remove(user);
+			return true;
 		}
+
 		return false;
 	}
 
 	@Override
 	public User findUser(String userName, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return DataBase.getInstance().getUsers().stream()
+				.filter(user -> user.getUserName().equals(userName) && user.getPassword().equals(password)).findFirst()
+				.orElse(null);
 	}
 
 }
