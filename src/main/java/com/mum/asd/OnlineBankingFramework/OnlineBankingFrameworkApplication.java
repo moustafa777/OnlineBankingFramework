@@ -10,8 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication(scanBasePackages={"com.mum.asd.OnlineBankingFramework"})// same as @Configuration @EnableAutoConfiguration @ComponentScan
+//@SpringBootApplication(scanBasePackages={"com.mum.asd.OnlineBankingFramework"})// same as @Configuration @EnableAutoConfiguration @ComponentScan
 
+@SpringBootApplication
+@ComponentScan(basePackages = "com")
 public class OnlineBankingFrameworkApplication {
 
 	public static void main(String[] args) {
