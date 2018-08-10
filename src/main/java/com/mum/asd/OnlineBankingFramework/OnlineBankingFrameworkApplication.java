@@ -1,14 +1,11 @@
 package com.mum.asd.OnlineBankingFramework;
 
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import com.mum.asd.OnlineBankingFramework.dao.DAOImpl;
+import com.mum.asd.data.daoimpl.FactoryDAO;
 
 //@SpringBootApplication(scanBasePackages={"com.mum.asd.OnlineBankingFramework"})// same as @Configuration @EnableAutoConfiguration @ComponentScan
 
@@ -17,7 +14,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OnlineBankingFrameworkApplication {
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(OnlineBankingFrameworkApplication.class, args);
+
+		// Provide data access implementation for framework
+		DAOImpl.setUserDAO(FactoryDAO.getUserDAO());
+		DAOImpl.setAccountDAO(FactoryDAO.getAccountDAO());
 	}
-	
+
 }
