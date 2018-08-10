@@ -1,7 +1,8 @@
 package com.mum.asd.OnlineBankingFramework.models;
 
-import java.util.List;
+import org.springframework.context.annotation.Scope;
 
+@Scope("session")
 public class User {
 
 	private long id;
@@ -9,6 +10,10 @@ public class User {
 	private String name;
 	private String password;
 	private Account account;
+
+	public User() {
+
+	}
 
 	public User(long id, String userName, String name, String password, Account account) {
 		this.id = id;
