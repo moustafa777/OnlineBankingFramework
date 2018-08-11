@@ -10,6 +10,9 @@ public class Account {
 	private List<Pill> paidPills;
 	private List<Transfer> userTransfers;
 
+	public Account() {
+	}
+
 	public Account(long accountNumber, double userBalance) {
 		this.accountNumber = accountNumber;
 		this.userBalance = userBalance;
