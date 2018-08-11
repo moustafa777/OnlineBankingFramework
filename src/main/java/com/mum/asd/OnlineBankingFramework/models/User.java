@@ -1,8 +1,5 @@
 package com.mum.asd.OnlineBankingFramework.models;
 
-import org.springframework.context.annotation.Scope;
-
-@Scope("session")
 public class User {
 
 	private long id;
