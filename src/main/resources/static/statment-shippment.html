@@ -143,18 +143,18 @@
         <!-- Page Content -->
         
 
-        <form class="form-horizontal" action="/reqStatment" method="post">
+        <form class="form-horizontal" action="/statment-shippment" method="post">
           <div class="form-group">
             <label class="control-label col-sm-2" for="mtdradio">Shipping Method:</label>
             <div class="col-sm-10">
               <div class="radio">
-                <label><input type="radio" name="mtdradio" checked> Fedex</label>
+                <label><form:radiobutton path="mtdradio" type="radio" name="mtdradio" value="Fedex" checked> Fedex</label>
               </div>
               <div class="radio">
-                <label><input type="radio" name="mtdradio"> USPS</label>
+                <label><form:radiobutton path="mtdradio" type="radio" name="mtdradio" value="USPS"> USPS</label>
               </div>
               <div class="radio disabled">
-                <label><input type="radio" name="mtdradio"> UPS</label>
+                <label><form:radiobutton path="mtdradio" type="radio" name="mtdradio" value="UPS"> UPS</label>
               </div>
             </div>
           </div>       
