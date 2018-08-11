@@ -24,7 +24,7 @@ public class LoginController {
 		UserProxyAuthentication userProxy = new UserProxyAuthentication();
 
 		if (userProxy.IsAuthenticated(user.getUserName(), user.getPassword()) != null) {
-			return "redirect:/index.html";
+			return "redirect:/";
 		} else {
 			model.addAttribute("error", "User Name or Password is wrong");
 			return "login";

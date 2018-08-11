@@ -6,6 +6,7 @@ public class User {
 	private String userName;
 	private String name;
 	private String password;
+	private String email;
 	private Account account;
 
 	public User() {
@@ -18,6 +19,7 @@ public class User {
 		this.name = name;
 		this.password = password;
 		this.account = account;
+	//	this.email= email;
 		this.account.setUser(this);
 	}
 
@@ -59,6 +61,16 @@ public class User {
 
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	
+	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
