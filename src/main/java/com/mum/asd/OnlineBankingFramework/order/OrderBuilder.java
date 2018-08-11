@@ -8,7 +8,7 @@ import com.mum.asd.OnlineBankingFramework.models.Item;
 import com.mum.asd.OnlineBankingFramework.models.User;
 
 public class OrderBuilder implements IOrderBuilder {
-	private Order order;
+	private Order order = new Order();
 
 	@Override
 	public void buildOrderDetails(User client) {

@@ -38,7 +38,7 @@ public final class DataBase {
 			users.add(new User(IdNumberGenerator.generateUserId(), "user_name" + i, "User" + i, "123",
 					acounts.get(i - 1)));
 		}
-
+		
 	}
 	
 	

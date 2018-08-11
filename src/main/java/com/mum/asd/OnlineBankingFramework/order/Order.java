@@ -13,6 +13,9 @@ public class Order {
 	private long totalAmount;
 	private Address shippingAddress;
 
+	public Order() {
+	}
+
 	public Integer getId() {
 		return id;
 	}

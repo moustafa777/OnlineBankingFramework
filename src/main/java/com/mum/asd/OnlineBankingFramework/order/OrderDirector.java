@@ -16,8 +16,8 @@ public class OrderDirector {
 
 	public void constructOrder(User client, Address shippingAddress, List<Item> items) {
 		orderBuilder.buildOrderDetails(client);
-		orderBuilder.buildOrderItems(items);
 		orderBuilder.buildShippingDetails(shippingAddress);
+		orderBuilder.buildOrderItems(items);
 
 	}
 
