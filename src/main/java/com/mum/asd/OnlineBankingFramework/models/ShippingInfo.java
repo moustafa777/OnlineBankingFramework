@@ -2,8 +2,8 @@ package com.mum.asd.OnlineBankingFramework.models;
 
 public class ShippingInfo {
 	
-	public Address address;
-	public String shippingMethod;
+	private Address address;
+	private String shippingMethod;
 	public Address getAddress() {
 		return address;
 	}
