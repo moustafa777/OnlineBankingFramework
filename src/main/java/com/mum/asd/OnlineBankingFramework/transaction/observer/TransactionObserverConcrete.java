@@ -20,6 +20,8 @@ public class TransactionObserverConcrete implements ITransactionObserver {
 			account.setUserBalance(account.getUserBalance() + transaction.getAmount());
 		}
 
+		transaction.setCurrentBalance(account.getUserBalance());
+
 		transaction.setAcccountNumber(account.getAccountNumber());
 
 		account.addTransaction(transaction);
