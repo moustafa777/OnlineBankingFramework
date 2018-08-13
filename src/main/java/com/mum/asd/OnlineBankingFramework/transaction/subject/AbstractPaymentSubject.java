@@ -3,11 +3,12 @@ package com.mum.asd.OnlineBankingFramework.transaction.subject;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mum.asd.OnlineBankingFramework.models.Bill;
+import com.mum.asd.OnlineBankingFramework.models.Transaction;
 import com.mum.asd.OnlineBankingFramework.transaction.observer.ITransactionObserver;
 
-public class AbstractPaymentSubject  implements IPaymentSubject{
+public abstract class AbstractPaymentSubject implements IPaymentSubject {
 
-	
 	private List<ITransactionObserver> observers;
 
 	public AbstractPaymentSubject() {
@@ -30,15 +31,16 @@ public class AbstractPaymentSubject  implements IPaymentSubject{
 
 	}
 
-
 	@Override
-	public void notifyObservers() {
+	public void notifyObservers(Transaction transaction) {
 
 		int n = observers.size();
 		for (int i = 0; i < n; ++i) {
 			ITransactionObserver observer = (ITransactionObserver) observers.get(i);
-			observer.update();
+			observer.update(transaction);
 		}
 
 	}
+
+	public abstract void payBill(Bill bill);
 }

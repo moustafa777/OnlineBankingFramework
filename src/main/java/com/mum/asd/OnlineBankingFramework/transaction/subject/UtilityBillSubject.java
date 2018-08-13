@@ -1,18 +1,18 @@
 package com.mum.asd.OnlineBankingFramework.transaction.subject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.mum.asd.OnlineBankingFramework.transaction.observer.ITransactionObserver;
+import com.mum.asd.OnlineBankingFramework.models.Bill;
+import com.mum.asd.OnlineBankingFramework.models.Transaction;
 
 public class UtilityBillSubject extends AbstractPaymentSubject {
 
+	@Override
+	public void payBill(Bill bill) {
 
-	
-	public void UutilityBill() {
-		
-		// do some business
-		notifyObservers();
+		Transaction transaction = new Transaction();
+		transaction.setAmount(bill.getBillAmount());
+		transaction.setDescription("Utility Bill");
+
+		notifyObservers(transaction);
 	}
 
 }

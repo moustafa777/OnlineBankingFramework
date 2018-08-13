@@ -17,6 +17,4 @@ public class ShippingInfo {
 		this.shippingMethod = shippingMethod;
 	}
 	
-	
-
 }

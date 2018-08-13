@@ -18,7 +18,7 @@ public class UserDAOImpl implements UserDAO {
 	public void add(User user) {
 		Random rand = new Random();
 
-		user.getAccount().setUserBalance(rand.nextInt(50)*25000);
+		user.getAccount().setUserBalance(rand.nextInt(50) * 25000);
 		DataBase.getInstance().getUsers().add(user);
 	}
 
@@ -45,6 +45,11 @@ public class UserDAOImpl implements UserDAO {
 		return DataBase.getInstance().getUsers().stream()
 				.filter(user -> user.getUserName().equals(userName) && user.getPassword().equals(password)).findFirst()
 				.orElse(null);
+	}
+
+	@Override
+	public User getCurrentUser() {
+		return DataBase.getInstance().getCurrentUser();
 	}
 
 }

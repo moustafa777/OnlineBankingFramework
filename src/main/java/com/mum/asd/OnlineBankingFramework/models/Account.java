@@ -1,5 +1,6 @@
 package com.mum.asd.OnlineBankingFramework.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -7,8 +8,8 @@ public class Account {
 	private long accountNumber;
 	private User user;
 	private double userBalance;
-	private List<Pill> paidPills;
-	private List<Transfer> userTransfers;
+	private List<Bill> paidPills;
+	List<Transaction> transactions;
 
 	public Account() {
 	}
@@ -42,20 +43,29 @@ public class Account {
 		this.userBalance = userBalance;
 	}
 
-	public List<Pill> getPaidPills() {
+	public List<Bill> getPaidPills() {
 		return paidPills;
 	}
 
-	public void setPaidPills(List<Pill> paidPills) {
+	public void setPaidPills(List<Bill> paidPills) {
 		this.paidPills = paidPills;
 	}
 
-	public List<Transfer> getUserTransfers() {
-		return userTransfers;
+	public List<Transaction> getTransactions() {
+		return transactions;
 	}
 
-	public void setUserTransfers(List<Transfer> userTransfers) {
-		this.userTransfers = userTransfers;
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+
+	public void addTransaction(Transaction transaction) {
+
+		if (transactions == null)
+			transactions = new ArrayList<>();
+
+		transactions.add(transaction);
+
 	}
 
 	@Override

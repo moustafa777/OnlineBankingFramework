@@ -6,4 +6,6 @@ public interface UserDAO extends BaseDAO<User> {
 
 
 	User findUser(String userName, String password);
+	
+	User getCurrentUser();
 }
