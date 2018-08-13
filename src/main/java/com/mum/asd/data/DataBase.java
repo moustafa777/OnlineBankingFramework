@@ -13,6 +13,8 @@ public final class DataBase {
 
 	private final List<User> users;
 	private final List<Account> acounts;
+	
+	private User currentUser;
 
 	private DataBase() {
 
@@ -42,7 +44,6 @@ public final class DataBase {
 	}
 	
 	
-
 	public List<Account> getAcounts() {
 		return acounts;
 	}
@@ -54,5 +55,14 @@ public final class DataBase {
 	public static DataBase getInstance() {
 		return dataBase;
 	}
+
+	public  User getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(User currentUser) {
+		this.currentUser = currentUser;
+	}
+	
 
 }

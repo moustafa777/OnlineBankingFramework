@@ -9,6 +9,8 @@ public class AccountBalanceStrategy implements IPaymentStrategy {
 
 	@Override
 	public void pay(double amount) {
+		
+		
 		System.out.println(amount + "$ Deduct From account balance. Thank you :)");
 	}
 

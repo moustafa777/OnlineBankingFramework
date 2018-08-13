@@ -1,6 +1,7 @@
 package com.mum.asd.data.daoimpl;
 
 import java.util.List;
+import java.util.Random;
 
 import com.mum.asd.OnlineBankingFramework.dao.UserDAO;
 import com.mum.asd.OnlineBankingFramework.models.User;
@@ -15,6 +16,9 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public void add(User user) {
+		Random rand = new Random();
+
+		user.getAccount().setUserBalance(rand.nextInt(50)*25000);
 		DataBase.getInstance().getUsers().add(user);
 	}
 

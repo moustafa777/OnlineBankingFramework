@@ -7,5 +7,7 @@ public interface IUserService {
 
 	void createUSer(User user);
 	
+	User findUser(String userName, String password);
+	
 	
 }
