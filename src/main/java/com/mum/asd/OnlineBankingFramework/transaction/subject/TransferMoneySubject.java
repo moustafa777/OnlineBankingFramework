@@ -11,6 +11,8 @@ public class TransferMoneySubject extends AbstractPaymentSubject {
 		Transaction transaction = new Transaction();
 		transaction.setAmount(bill.getBillAmount());
 		transaction.setDescription("Transfer money");
+		transaction.setType("Credit");
+
 
 		notifyObservers(transaction);
 	}

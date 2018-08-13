@@ -11,6 +11,8 @@ public class PhoneBillSubject extends AbstractPaymentSubject {
 		Transaction transaction = new Transaction();
 		transaction.setAmount(bill.getBillAmount());
 		transaction.setDescription("Phone Bill");
+		transaction.setType("Credit");
+
 
 		notifyObservers(transaction);
 

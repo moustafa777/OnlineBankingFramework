@@ -11,6 +11,7 @@ public class UtilityBillSubject extends AbstractPaymentSubject {
 		Transaction transaction = new Transaction();
 		transaction.setAmount(bill.getBillAmount());
 		transaction.setDescription("Utility Bill");
+		transaction.setType("Credit");
 
 		notifyObservers(transaction);
 	}
