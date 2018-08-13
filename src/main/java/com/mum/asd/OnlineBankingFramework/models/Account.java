@@ -3,6 +3,8 @@ package com.mum.asd.OnlineBankingFramework.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mum.asd.OnlineBankingFramework.state.AccountState;
+
 public class Account {
 
 	private long accountNumber;
@@ -10,6 +12,15 @@ public class Account {
 	private double userBalance;
 	private List<Bill> paidPills;
 	List<Transaction> transactions;
+	private AccountState accountState;
+
+	public AccountState getAccountState() {
+		return accountState;
+	}
+
+	public void setAccountState(AccountState accountState) {
+		this.accountState = accountState;
+	}
 
 	public Account() {
 	}
