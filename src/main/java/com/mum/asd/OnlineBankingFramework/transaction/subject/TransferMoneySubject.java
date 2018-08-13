@@ -2,6 +2,7 @@ package com.mum.asd.OnlineBankingFramework.transaction.subject;
 
 import com.mum.asd.OnlineBankingFramework.models.Bill;
 import com.mum.asd.OnlineBankingFramework.models.Transaction;
+import com.mum.asd.OnlineBankingFramework.models.TransactionType;
 
 public class TransferMoneySubject extends AbstractPaymentSubject {
 
@@ -11,7 +12,7 @@ public class TransferMoneySubject extends AbstractPaymentSubject {
 		Transaction transaction = new Transaction();
 		transaction.setAmount(bill.getBillAmount());
 		transaction.setDescription("Transfer money");
-		transaction.setType("Credit");
+		transaction.setType(TransactionType.CREDIT);
 
 
 		notifyObservers(transaction);
